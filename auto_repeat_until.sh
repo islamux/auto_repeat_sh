@@ -1,6 +1,7 @@
 attempts=5  # Change this to your desired number of attempts
-
-until [[ $(ollama pull llama2; echo $?) -eq 0 ]]; do
+# ex : repeat the command "ping to 1.1.1.1"
+#ping 1.1.1.1
+until [[ $(ping 1.1.1.1; echo $?) -eq 0 ]]; do
   ((attempts--))
   if [[ $attempts -eq 0 ]]; then
     echo "Error: Reached maximum retries."
